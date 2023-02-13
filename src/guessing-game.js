@@ -1,21 +1,22 @@
-function setRange(min, max, xxx) {
+const number = 1409;
+
+function setRange(min, max) {
   let myNumber = Math.round(min + (max - min) / 2);
 
-  if (xxx < min || xxx > max) {
+  if (number < min || number > max) {
     return `Иди ты в ..., сам одгадывай :) Нету этого числа в предложенном диапазоне`;
   }
-  if (myNumber === xxx) {
-    return `Возьми с полки пирожок :) чемпион, число = ${xxx}`;
-  } else if (myNumber > xxx) {
-    return setRange(min, myNumber, xxx);
+  if (myNumber === number) {
+    return `Возьми с полки пирожок :) чемпион, число = ${myNumber}`;
+  } else if (myNumber > number) {
+    return setRange(min, myNumber);
   } else {
-    return setRange(myNumber, max, xxx);
+    return setRange(myNumber, max);
   }
 }
 
-console.log(setRange(0, 4048, 409));
-console.log(setRange(-354, 73, -36));
-console.log(setRange(10, 124, 1));
+console.log(setRange(0, 4048));
+console.log(setRange(-35, 1360));
 
 class GuessingGame {
   constructor() {}
